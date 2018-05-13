@@ -9,6 +9,41 @@ class Solution(object):
 	    return ['->'.join(map(str, r)) for r in ranges]
 
 
+# class Solution(object):
+#     def summaryRanges(self, nums):
+#         """
+#         :type nums: List[int]
+#         :rtype: List[str]
+#         """
+#         if not nums:
+#             return []
+#         if len(nums) == 1:
+#             return [str(nums[0])]
+        
+#         res = []
+#         prev = nums[0]
+#         path    = str(prev)
+#         for i in range(1, len(nums)):
+#             curr = nums[i]
+#             if curr != prev + 1:
+#                 if str(prev) != path:
+#                     path += "->" + str(prev)
+#                 # if i == len(nums) - 1:
+#                 #     path += "->" + curr
+#                 res.append(path)
+#                 path = str(curr)
+
+#             if i == len(nums) - 1:
+#                 # print path, curr
+#                 if path != str(curr):
+#                     path += "->" + str(curr)
+#                 res.append(path)
+#             prev = curr
+        
+#         return res      
+
+
+
 #  About the commas :-)
 
 # Three people asked about them in the comments, so I'll also explain it here as well. I have these two basic cases:
