@@ -23,4 +23,10 @@ class Solution(object):
                 return root
                 
         
+
+# def lowestCommonAncestor(self, root, p, q):
+#     a, b = sorted([p.val, q.val])
+#     while not a <= root.val <= b:
+#         root = (root.left, root.right)[a > root.val]
+#     return root
         
