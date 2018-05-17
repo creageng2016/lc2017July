@@ -7,10 +7,6 @@ class Solution(object):
         :type input: str
         :rtype: List[int]
         """
-        # if len(input) == 0:
-        #     return 0
-        # if len(input) == 1:
-        #     return input[0]
         patttern    = re.compile(r'\s+')
         input       = re.sub(patttern, '', input) 
 
