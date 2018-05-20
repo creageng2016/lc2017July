@@ -26,9 +26,9 @@ class Solution(object):
         #     return True
 
         for p in 2, 3, 5:
-    while num % p == 0 < num:
-        num /= p
-return num == 1
+            while num % p == 0 < num:
+                num /= p
+        return num == 1
             
 
 if __name__ == '__main__':
