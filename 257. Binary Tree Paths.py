@@ -28,3 +28,16 @@ class Solution(object):
         # print res
         res = ["->".join([str(v) for v in path]) for path in res]
         return res
+
+# def rootToLeafPaths(self, root):
+#    if not root: return []
+#    if not root.left and not root.right: return [str(root.val)]
+#    return [str(root.val) + '->' + i for i in self.rootToLeafPaths(root.left)] +
+#              [str(root.val) + '->' + i for i in self.rootToLeafPaths(root.right)]
+
+
+    # def binaryTreePaths(self, root):
+    #     if not root: return []
+    #     result= [ str(root.val)+"->" + path for path in self.binaryTreePaths(root.left)]
+    #     result+= [ str(root.val)+"->" + path for path in self.binaryTreePaths(root.right)]
+    #     return result or [str(root.val)]  # if empty return leaf itself
