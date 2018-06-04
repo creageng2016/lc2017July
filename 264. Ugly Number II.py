@@ -3,8 +3,9 @@ class Solution(object):
         """
         :type n: int
         :rtype: int
+        Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. 
         """
-        ugs = [1]
+           ugs = [1]
         i2 = i3 = i5 = 0
         
         while n >= 0 :
@@ -29,6 +30,25 @@ class Solution(object):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     n = 10
     print Solution().nthUglyNumber(n)
+
+
+
+
+
+
+
