@@ -7,35 +7,35 @@ class Solution(object):
 		:type input: str
 		:rtype: List[int]
 		"""
-		import re
-		import operator
+		tokens 	= re.split("(\D)", s)
+		# print tokens
+		nums 	= map(int, tokens[::2])
+		ops 	= map(
+			{
+				"+": operator.add,
+				"-": operator.sub,
+				"*": operator.mul,
+			}.get, tokens[1::2]
+		)
 
-		space 	= re.compile("\s+")
-		s 		= re.sub(space, '', s)
-		ops 	= tokens[1::2]
-		
-		mapping = map({
-			"+": operator.add,
-			"-": operator.sub,
-			"*": operator.mul,
-			}.get, ops)
-
-		tokens 	= re.split("(\D+)", word)
-		nums 	= tokens[::2]
-
-		def build(lo, hi):
-			if lo == hi:
-				return nums[lo]
+		def build(lo, hi):			
 			res = []
+			if lo == hi:
+				res.append(nums[lo])
+				return res
+							
 			for i in range(lo, hi):
-				l = build(lo, i)
-				r = build(i + 1, hi)
-				res.append(mapping[i](l, r))
-			return sum(res)
+				for a in build(lo, i):
+					for b in build(i + 1, hi):
+						res.append(ops[i](a, b))
+			return res
 
+		res = build(0, len(nums) - 1)
+		return res
 
 if __name__ == '__main__':
 	s = "2*3-4*5"
+	# [-34, -14, -10, -10, 10]
 	print Solution().diffWaysToCompute(s)
 
 # import re
